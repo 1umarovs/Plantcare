@@ -1,0 +1,276 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!--First-section-starts-->
+    <div class="first container"><br>
+
+       <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+          <div class="card" style="overflow: hidden; height: 100%">
+            <div style="overflow: hidden">
+              <div class="text-white p-2 rounded m-2" style="position: absolute;z-index: 1;background-color: #22490b;">
+                O'simliklarimga qo'shish</div>
+              <img src="../static/src/img/p1.png" class="card-img-top top">
+            </div>
+            <div class="card-body">
+              <center>
+                <h2 class="card-title">Prayer</h2>
+              </center>
+              <p class="card-text text-secondary">Juda ajoyib o'simlik bo'lib barglari yorug'likka hamohang harakat
+                qiladi va qorong'u tushganda barglari yig'ilib qoladi. </p>
+              <p class="text-secondary">Parvarish kam talab qiluvchi salqinsevar xona ichi o'simligi. </p>
+              <p class="text-secondary">Parvarish qilishning murakkablik darajasi: oson</p>
+              <h4 class="card-text"><s class="mx-1">49.999so'm</s>29.999so'm</h4>
+              <button class="cardBtn">Sotib olish</button>
+              <hr class="border border-dark border-1 opacity-50">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+          <div class="card" style="overflow: hidden; height: 100%">
+            <div style="overflow: hidden">
+              <div class="text-white p-2 rounded m-2" style="position: absolute;z-index: 1;background-color: #22490b;">
+                O'simliklarimga qo'shish
+              </div>
+              <img src="../static/src/img/p2.png" class="card-img-top top" alt="..." />
+            </div>
+            <div class="card-body">
+              <center>
+                <h2 class="card-title"> Pul daraxti</h2>
+              </center>
+              <p class="card-text text-secondary">Asosiy poyasi bir dona bo'lgan o'raluvchan dizaynli poyachalarga
+                bo'linuvchi o'simlik bo'lib, ofislar va katta xonalarga mo'ljallangan. </p>
+              <p class="text-secondary">Turi: Quyosh nuri yaxshi tushadigan sharoitda o'suvchi o'rtacha kattalikdagi
+                xona ichi va tashqi o'simlik. </p>
+              <p class="text-secondary">Parvarish qilishning murakkablik darajasi: o'rtacha</p>
+              <h4 class="card-text"><s class="mx-1">49.999so'm</s>29.999so'm</h4>
+              <button class="cardBtn">Sotib olish</button>
+              <hr class="border border-dark border-1 opacity-50">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+          <div class="card" style="overflow: hidden; height: 100%">
+            <div style="overflow: hidden">
+              <div class="text-white p-2 rounded m-2" style="position: absolute;z-index: 1;background-color: #22490b;">
+                O'simliklarimga qo'shish
+              </div>
+              <img src="../static/src/img/p3.png" class="card-img-top top" alt="..." />
+            </div>
+            <div class="card-body">
+              <center>
+                <h2 class="card-title">Pushti orxideya</h2>
+              </center>
+              <p class="card-text text-secondary">Ta'rif: Gullash davomiyligi uzoq bo'lgan ekzotik orxideya bo'lib,
+                nafaqat guli balki pastki poya qsimlari ham ham ekzotik ko'rinishga ega. </p>
+              <p class="text-secondary">Turi: Quyosh nuri tik tushmaydigan yorqin muhitda o'sishga moslashgan, ortiqcha
+                suv talab qilmaydi xona ichi o'simligi. </p>
+              <p class="text-secondary">Parvarish qilishning murakkablik darajasi: o'rtacha</p>
+              <h4 class="card-text"><s class="mx-1">49.999so'm</s>29.999so'm</h4>
+              <button class="cardBtn">Sotib olish</button>
+              <hr class="border border-dark border-1 opacity-50">
+            </div>
+          </div>
+        </div>
+      </div>
+<br>
+      <br><br>
+      <div class="row">
+        <button class="btn2 p-3">Gullaydigan o'simliklar</button>
+        {% for plant in Plants %}
+        {% if plant.category.name == "Gullaydigan o'simliklar" %}
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+          <div class="card" style="overflow: hidden; height: 100%">
+            <div style="overflow: hidden">
+              <div class="text-white p-2 rounded m-2" style="position: absolute;z-index: 1;background-color: #22490b;">
+                O'simliklarimga qo'shish</div>
+              <img src="{{plant.img.url}}" class="card-img-top top">
+            </div>
+            <div class="card-body">
+              <center>
+                <h2 class="card-title">{{plant.title}}</h2>
+                <h6>{{plant.category}}</h6>
+              </center>
+              <p class="text-secondary">{{plant.body}}</p>
+              <h4 class="card-text"><s class="mx-1">{{plant.old_price}}so'm</s>{{plant.new_price}}so'm</h4>
+              <button  data-product="{{product.id}}" data-action="add" class="cardBtn" add-btn update-cart>Sotib olish</button>
+              <hr class="border border-dark border-1 opacity-50">
+            </div>
+          </div>
+        </div>
+                {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="row">
+        <button class="btn2 p-3">Noyob o'simliklar</button>
+        {% for plant in Plants %}
+        {% if plant.category.name == "noyob o'simliklar" %}
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+          <div class="card" style="overflow: hidden; height: 100%">
+            <div style="overflow: hidden">
+              <div class="text-white p-2 rounded m-2" style="position: absolute;z-index: 1;background-color: #22490b;">
+                O'simliklarimga qo'shish</div>
+              <img src="{{plant.img.url}}" class="card-img-top top">
+            </div>
+            <div class="card-body">
+              <center>
+                <h2 class="card-title">{{plant.title}}</h2>
+                <h6>{{plant.category}}</h6>
+              </center>
+              <p class="text-secondary">{{plant.body}}</p>
+              <h4 class="card-text"><s class="mx-1">{{plant.old_price}}so'm</s>{{plant.new_price}}so'm</h4>
+              <button  data-product="{{product.id}}" data-action="add" class="cardBtn" add-btn update-cart>Sotib olish</button>
+              <hr class="border border-dark border-1 opacity-50">
+            </div>
+          </div>
+        </div>
+                {% endif %}
+        {% endfor %}
+      </div>
+
+
+      <div class="row">
+        <button class="btn2 p-3">Hovli o'simligi</button>
+        {% for plant in Plants %}
+        {% if plant.category.name == "Hovli o'simligi" %}
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+          <div class="card" style="overflow: hidden; height: 100%">
+            <div style="overflow: hidden">
+              <div class="text-white p-2 rounded m-2" style="position: absolute;z-index: 1;background-color: #22490b;">
+                O'simliklarimga qo'shish</div>
+              <img src="{{plant.img.url}}" class="card-img-top top">
+            </div>
+            <div class="card-body">
+              <center>
+                <h2 class="card-title">{{plant.title}}</h2>
+                <h6>{{plant.category}}</h6>
+              </center>
+              <p class="text-secondary">{{plant.body}}</p>
+              <h4 class="card-text"><s class="mx-1">{{plant.old_price}}so'm</s>{{plant.new_price}}so'm</h4>
+              <button  data-product="{{product.id}}" data-action="add" class="cardBtn" add-btn update-cart>Sotib olish</button>
+              <hr class="border border-dark border-1 opacity-50">
+            </div>
+          </div>
+        </div>
+                {% endif %}
+        {% endfor %}
+      </div>
+
+
+      <div class="row">
+        <button class="btn2 p-3">Sovg'a uchun</button>
+        {% for plant in Plants %}
+        {% if plant.category.name == "Sovg'a uchun" %}
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+          <div class="card" style="overflow: hidden; height: 100%">
+            <div style="overflow: hidden">
+              <div class="text-white p-2 rounded m-2" style="position: absolute;z-index: 1;background-color: #22490b;">
+                O'simliklarimga qo'shish</div>
+              <img src="{{plant.img.url}}" class="card-img-top top">
+            </div>
+            <div class="card-body">
+              <center>
+                <h2 class="card-title">{{plant.title}}</h2>
+                <h6>{{plant.category}}</h6>
+              </center>
+              <p class="text-secondary">{{plant.body}}</p>
+              <h4 class="card-text"><s class="mx-1">{{plant.old_price}}so'm</s>{{plant.new_price}}so'm</h4>
+              <button  data-product="{{product.id}}" data-action="add" class="cardBtn" add-btn update-cart>Sotib olish</button>
+              <hr class="border border-dark border-1 opacity-50">
+            </div>
+          </div>
+        </div>
+                {% endif %}
+        {% endfor %}
+      </div>
+
+
+      <div class="row">
+        <button class="btn2 p-3">Katta o'simliklar</button>
+        {% for plant in Plants %}
+        {% if plant.category.name == "katta o’simliklar" %}
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+          <div class="card" style="overflow: hidden; height: 100%">
+            <div style="overflow: hidden">
+              <div class="text-white p-2 rounded m-2" style="position: absolute;z-index: 1;background-color: #22490b;">
+                O'simliklarimga qo'shish</div>
+              <img src="{{plant.img.url}}" class="card-img-top top">
+            </div>
+            <div class="card-body">
+              <center>
+                <h2 class="card-title">{{plant.title}}</h2>
+                <h6>{{plant.category}}</h6>
+              </center>
+              <p class="text-secondary">{{plant.body}}</p>
+              <h4 class="card-text"><s class="mx-1">{{plant.old_price}}so'm</s>{{plant.new_price}}so'm</h4>
+              <button  data-product="{{product.id}}" data-action="add" class="cardBtn" add-btn update-cart>Sotib olish</button>
+              <hr class="border border-dark border-1 opacity-50">
+            </div>
+          </div>
+        </div>
+                {% endif %}
+        {% endfor %}
+      </div>
+            
+
+
+    </div>
+    <!--Second-section-ends-->
+    <br>
+    <!-- Third-section-starts -->
+    <div class="Third container">
+      <h2 class="text-white">Takliflar</h2><br>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 border">
+          <div class="row">
+            <div class="col-lg-6 col-md-12 p-3">
+              <h1 class="text-white">Taklif <br>qilingan <br>kolleksiya</h1>
+              <h6 class="text-white">Takrorlanmas dizayn</h6><br>
+              <button class="cardBtn">Xoziroq Sotib olish</button>
+            </div>
+            <div class="col-lg-6 col-md-12"><img src="{% static 'src/img/bonus1.webp' %}" style="width:100%" /></div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 border">
+          <div class="row">
+            <div class="col-lg-6 col-md-12 p-3">
+              <h1 class="text-white">Keshbek <br>uchun <br>harid</h1>
+              <button class="cardBtn">Xoziroq Sotib olish</button>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <img src="{% static 'src/img/bonus2.webp' %}" alt="" style="width:100%" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- third-section-ends -->
+    <br>
+    <!-- fourth-section-starts -->
+    <div class="fourth" style="background-image: url({% static 'src/img/lastbg.webp' %}) ">
+      <div class="container ">
+        <br><br><br><br class="none"><br class="none"><br class="none">
+        <h1 class="text-white size text-center">
+          Katalogda Mavjud Bo'lmagan O'simlikni Qidiryapsizmi?!<br>
+          <p style="font-size: 30px "> "PlantCare" bilan buning ham yechimi bor</p>
+        </h1><br><br>
+        <b class="text-white">O'zingiz qidirayotgan o'simlik nomi yoki rasmini yuboring*</b><br><br>
+        <form>
+          <div class="row align-items-center">
+            <div class="col-sm-12 col-md-8 col-lg-8">
+              <input type="image" placeholder="O'simlik nomi yoki rasmi" style="width:100%">
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+              <button class="btn2 p-2 m-2" style="font-size:20px ;" id="last"> Yuborish</button>
+            </div>
+          </div>
+        </form>
+        <br><br>
+      </div>
+    </div>
+    <!-- fourth-section-ends -->
+
+
+    {% endblock %}

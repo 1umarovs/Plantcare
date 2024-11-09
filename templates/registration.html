@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+body{background: black;}.inp3 label{color: white;padding: 0px 10px;float: left;}.inp3{padding: 10px 0px;}.form-control{width: 320px;}
+@media only screen and (min-width:360px) and (max-width:418px) {
+    .inp3 label{
+        padding-left: 20px;
+    }
+    .container{
+        padding: 30px;
+    }
+}
+</style>
+<br><br>
+    <title>register ...</title>
+
+    <div class="container">
+        <center>
+    <div class="row">
+            <div class="col-sm-12 col-md-12" style="border: solid 1px white;border-radius: 20px;width: auto;">
+            <br><br>
+            <center>
+            <h1 style="color: white;">registration</h1></center>
+            <br>
+            <div class="form-group dark">
+            <form method="POST">
+            {% csrf_token %}
+            <center>
+            <div class="inp3">
+                <label for="">username</label>
+                {{ form.username }}
+            </div>
+            <div class="inp3">
+                <label for="">firstname</label>
+                {{ form.first_name }}
+            </div>
+            <div class="inp3">
+                <label for="">last_name</label>
+                {{ form.last_name }}
+            </div>
+            <div class="inp3">
+                <label for="">password1</label>
+                {{ form.password1 }}
+            </div>
+            <div class="inp3">
+                <label for="">password2</label>
+                {{ form.password2 }}
+            </div>
+        </center>
+            <br>
+            <button class="btn btn-success">register</button>
+            <br>
+            <br>
+            +
+        </div>
+        </div>
+    </div>
+    </center>
+</div>
+{% endblock %}

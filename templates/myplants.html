@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- First-section-starts -->
+
+    <div class="first-section bg-black p-3">
+        <center>
+            <h1 class="dis" style="font-size: 40px;">Mening O'simliklarim</h1>
+        </center>
+        <br>
+        <div class="container bg-light p-3">
+            <br>
+            <div class="row">
+                <div class="col-12 my-2">
+                    <div class="card p-2" style="">
+
+                        <div class="row">
+                            <center>
+                                <div class="col-sm-12 col-md-12 col-lg-4">
+                                    <img src="{% static 'src/img/p1.png' %}" alt="" style="width: 100%;">
+                                </div>
+                            </center>
+                            <div class="col-sm-12 col-md-12 col-lg-12 p-3">
+                                <center>
+                                    <h1 class="card-title">Prayer</h1><br>
+                                </center>
+                                <h4 class="text-secondary">Parvarish kam talab qiluvchi salqinsevar xona ichi o'simligi.
+                                </h4>
+                                <h4 class="text-secondary">Parvarish qilishning murakkablik darajasi: oson</h4>
+
+                                <b class="text-secondary">
+                                    ☀️Quyosh nuri. O'rtacha bo'lgan bilvosita yorug'likda o'sadi. Kuchli,
+                                    to'g'ridan-to'g'ri tushadigan quyosh nuri tavsiya etilmaydi.<br>
+
+                                    💧Sug'orish. Har 1-2 haftada sug'orish talab etiladi, Tuproq yarimqurigan holatida
+                                    sug'orish mumkin.<br>
+
+                                    💦Namlik. Oddiy xona namligi juda mos, lekin xona namligidan ko'ra namroq sharoit bu
+                                    o'simlik uchun ideal, u ko'proq namlikni afzal ko'radi.<br>
+
+                                    🌡Harorat. O'stirish tavsiya etiladigan minimal va maximal haroratlar: 65°F–85°F
+                                    (18°C–30°C).<br>
+
+                                    ❗️Barglari to'kilishni boshlasa ayni muhit haroratini o'zgartirish talab etiladi,
+                                    barglarining hajmi kichiklashishi esa uni boshqa kattaroq tuvakka o'tkazish kerak
+                                    ekanini anglatadi.
+                                    <br>
+                                    💡O'simligingizni oxirgi marta sugo'rgansiz: 15.05.2022
+                                </b>
+                                <hr class="border border-dark border-1 opacity-50">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- First-section-ends -->
+
+        <!-- Second-section-starts -->
+        <div class="second-section container">
+            <h2 class="text-white">Takliflar</h2><br>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 border">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 p-3">
+                            <h1 class="text-white">Taklif <br>qilingan <br>kolleksiya</h1>
+                            <h6 class="text-white">Takrorlanmas dizayn</h6><br>
+                            <button class="cardBtn">Xoziroq Sotib olish</button>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <img src="{% static 'src/img/bonus1.webp' %}" alt="" style="width:100%" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 border">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 p-3">
+                            <h1 class="text-white">Keshbek <br>uchun <br>harid</h1>
+                            <button class="cardBtn">Xoziroq Sotib olish</button>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <img src="{% static 'src/img/bonus2.webp' %}" alt="" style="width:100%" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Second-section-ends -->
+
+
+       {% endblock %}

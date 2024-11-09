@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    
+
+<div class="first container"><br>
+    <br>
+    <div class="row">
+      {% for plant in plants %}
+      <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+        <div class="card" style="overflow: hidden; height: 100%">
+          <div style="overflow: hidden">
+            <div class="text-white p-2 rounded m-2" style="position: absolute;z-index: 1;background-color: #22490b;">
+              O'simliklarimga qo'shish</div>
+            <img src="{{plant.img.url}}" class="card-img-top top">
+          </div>
+          <div class="card-body">
+            <center>
+              <h2 class="card-title">{{plant.title}}</h2>
+            </center>
+            <p class="text-secondary">{{plant.body}}</p>
+            <h4 class="card-text"><s class="mx-1">{{plant.old_price}}so'm</s>{{plant.new_price}}so'm</h4>
+            <button  data-product="{{product.id}}" data-action="add" class="cardBtn" add-btn update-cart>Sotib olish</button>
+            <hr class="border border-dark border-1 opacity-50">
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

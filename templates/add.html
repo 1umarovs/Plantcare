@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- First-section-starts -->
+
+    <div class="first-section bg-black p-3">
+        <center>
+            <h1 class="dis" style="font-size: 40px;">Qo'shimcha </h1>
+        </center>
+        <br>
+        <div class="container bg-light p-3"><br>
+            <div class="row">
+                {% for item in add %}
+                <div class="col-sm-12 col-md-6 col-lg-4 my-2">
+                    <div class="card" style="overflow: hidden; height: 100%">
+                        <div style="overflow: hidden">
+                            <img src="{{item.img.url}}" class="card-img-top top" alt="..." />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.title}}</h5>
+                            <h4 class="card-text"><s>{{item.old_price}}so'm</s>{{item.new_price}}so'm</h4>
+                            <button class="cardBtn">Sotib olish</button>
+                              <hr class="border border-dark border-1 opacity-50">
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <br>
+        <!-- First-section-ends -->
+
+        <!-- Second-section-starts -->
+        <div class="second-section container">
+            <h2 class="text-white">Takliflar</h2><br>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 p-3 border">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 p-3 text-center d-flex justify-content-center align-items-center flex-wrap"
+                            style="background-color:#BE5A09 ;">
+
+                            <div>
+                                <h4 class="text-white">O'simliklar savatim<h1 class="text-white">
+                                    14.99$-dan keyin chegirmada xarid qiling
+                                </h1></h4>
+                            </div>
+                            <br><br>
+                            <button class="cardBtn border">Sotib olish</button>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <img src="{% static 'src/img/bonus1.webp' %}" alt="" style="width:100%" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 border">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 p-3">
+                            <h1 class="text-white">Taklif <br>qilingan <br>kolleksiya</h1>
+                            <h6 class="text-white">Takrorlanmas dizayn</h6><br>
+                            <button class="cardBtn">Xoziroq Sotib olish</button>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <img src="{% static 'src/img/bonus1.webp' %}" alt="" style="width:100%" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 border">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 p-3">
+                            <h1 class="text-white">Keshbek <br>uchun <br>harid</h1>
+                            <button class="cardBtn">Xoziroq Sotib olish</button>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <img src="{% static 'src/img/bonus2.webp' %}" alt="" style="width:100%" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second-section-ends -->
+
+            {% endblock %}
