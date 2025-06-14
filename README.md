@@ -35,7 +35,7 @@ Sayt orqali foydalanuvchilar turli xil **gul turlari**, ularning **narxlari**, *
 
 > (Bu yerga saytdan skrinshot joylashtiring – quyidagicha)
 
-![Plantcare Screenshot](assets/plantcare-home.png)
+![Plantcare Screenshot](src/img/back.jpg)
 
 ---
 
