@@ -35,7 +35,7 @@ Sayt orqali foydalanuvchilar turli xil **gul turlari**, ularning **narxlari**, *
 
 > (Bu yerga saytdan skrinshot joylashtiring – quyidagicha)
 
-![Plantcare Screenshot](src/img/back.jpg)
+![Plantcare Screenshot](./staticfiles/src/img/back.jpg)
 
 ---
 
@@ -46,4 +46,4 @@ Agar lokalda ko‘rmoqchi bo‘lsangiz:
 ```bash
 git clone https://github.com/1umarovs/Plantcare.git
 cd Plantcare
-open index.html
+py manage.py runserver
